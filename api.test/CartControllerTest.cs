@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using AutoFixture;
 using AutoFixture.AutoMoq;
 using AutoFixture.NUnit3;
-
+using FluentAssertions;
 
 namespace test
 {
@@ -25,11 +25,10 @@ namespace test
 
   public class Tests
   {
-      private CartController controller;
-
       [Theory]
       [AutoDomainData]
       public void ShouldReturnCharged(
+          CartController controller,
           [Frozen]Mock<IPaymentService> paymentServiceMock, [Frozen]Mock<ICartService> cartServiceMock,
           [Frozen]Mock<IShipmentService> shipmentServiceMock, [Frozen] Mock<ICard> cardMock,
           [Frozen]Mock<IAddressInfo> addressInfoMock, [Frozen]Mock<CartItem> cartItem, List<CartItem> items
@@ -47,12 +46,14 @@ namespace test
           // assert
           shipmentServiceMock.Verify(s => s.Ship(addressInfoMock.Object, items.AsEnumerable()), Times.Once());
 
-          Assert.AreEqual("charged", result);
+          result.Should().Equals("charged");
+         
       }
 
       [Theory]
       [AutoDomainData]
         public void ShouldReturnNotCharged(
+            CartController controller,
             [Frozen] Mock<IPaymentService> paymentServiceMock, Mock<ICartService> cartServiceMock,
             [Frozen] Mock<IShipmentService> shipmentServiceMock, [Frozen] Mock<ICard> cardMock,
             [Frozen] Mock<IAddressInfo> addressInfoMock, [Frozen] Mock<CartItem> cartItem, List<CartItem> items
@@ -66,7 +67,8 @@ namespace test
 
           // assert
           shipmentServiceMock.Verify(s => s.Ship(addressInfoMock.Object, items.AsEnumerable()), Times.Never());
-          Assert.AreEqual("not charged", result);
+          result.Should().Equals("not charged");
+          
       }
   }
 }
