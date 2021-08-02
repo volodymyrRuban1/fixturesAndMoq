@@ -2,6 +2,45 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "AutoFixture/4.17.0": {
+        "type": "package",
+        "dependencies": {
+          "Fare": "[2.1.1, 3.0.0)",
+          "System.ComponentModel.Annotations": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.dll": {}
+        }
+      },
+      "AutoFixture.AutoMoq/4.17.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoFixture": "4.17.0",
+          "Moq": "[4.7.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.AutoMoq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.AutoMoq.dll": {}
+        }
+      },
+      "AutoFixture.NUnit3/4.17.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoFixture": "4.17.0",
+          "NUnit": "[3.7.0, 4.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.NUnit3.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.NUnit3.dll": {}
+        }
+      },
       "Castle.Core/4.4.0": {
         "type": "package",
         "dependencies": {
@@ -23,10 +62,22 @@
           "lib/netstandard1.5/Castle.Core.dll": {}
         }
       },
-      "coverlet.collector/3.0.2": {
+      "coverlet.collector/3.1.0": {
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
+        }
+      },
+      "Fare/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Fare.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Fare.dll": {}
         }
       },
       "Microsoft.CodeCoverage/16.9.4": {
@@ -664,6 +715,28 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.ComponentModel.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.4/System.ComponentModel.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/System.ComponentModel.Annotations.dll": {}
         }
       },
       "System.ComponentModel.EventBasedAsync/4.3.0": {
@@ -1400,6 +1473,69 @@
     }
   },
   "libraries": {
+    "AutoFixture/4.17.0": {
+      "sha512": "efMRCG3Epc4QDELwdmQGf6/caQUleRXPRCnLAq5gLMpTuOTcOQWV12vEJ8qo678Rj97/TjjxHYu/34rGkXdVAA==",
+      "type": "package",
+      "path": "autofixture/4.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofixture.4.17.0.nupkg.sha512",
+        "autofixture.nuspec",
+        "icon.png",
+        "lib/net452/AutoFixture.dll",
+        "lib/net452/AutoFixture.pdb",
+        "lib/net452/AutoFixture.xml",
+        "lib/netstandard1.5/AutoFixture.dll",
+        "lib/netstandard1.5/AutoFixture.pdb",
+        "lib/netstandard1.5/AutoFixture.xml",
+        "lib/netstandard2.0/AutoFixture.dll",
+        "lib/netstandard2.0/AutoFixture.pdb",
+        "lib/netstandard2.0/AutoFixture.xml"
+      ]
+    },
+    "AutoFixture.AutoMoq/4.17.0": {
+      "sha512": "i6xReNJM8+jjXk1LJ5UBPJMZjoOAr7mkgM1pkI40aZJ9Y2KZxRW528XmLoYzDmvIayDtvzkYd1Zns0dn7Kkr0g==",
+      "type": "package",
+      "path": "autofixture.automoq/4.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofixture.automoq.4.17.0.nupkg.sha512",
+        "autofixture.automoq.nuspec",
+        "icon.png",
+        "lib/net452/AutoFixture.AutoMoq.dll",
+        "lib/net452/AutoFixture.AutoMoq.pdb",
+        "lib/net452/AutoFixture.AutoMoq.xml",
+        "lib/netstandard1.5/AutoFixture.AutoMoq.dll",
+        "lib/netstandard1.5/AutoFixture.AutoMoq.pdb",
+        "lib/netstandard1.5/AutoFixture.AutoMoq.xml",
+        "lib/netstandard2.0/AutoFixture.AutoMoq.dll",
+        "lib/netstandard2.0/AutoFixture.AutoMoq.pdb",
+        "lib/netstandard2.0/AutoFixture.AutoMoq.xml"
+      ]
+    },
+    "AutoFixture.NUnit3/4.17.0": {
+      "sha512": "v5VkKkzHSsjdRNOccst/nYkiJsXdAWwKmgxidlToL9FFQAHicCT1zwl0IF4pGbwpAmqKi4+dl4qZ+31iyeAXmg==",
+      "type": "package",
+      "path": "autofixture.nunit3/4.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofixture.nunit3.4.17.0.nupkg.sha512",
+        "autofixture.nunit3.nuspec",
+        "icon.png",
+        "lib/net452/AutoFixture.NUnit3.dll",
+        "lib/net452/AutoFixture.NUnit3.pdb",
+        "lib/net452/AutoFixture.NUnit3.xml",
+        "lib/netstandard1.5/AutoFixture.NUnit3.dll",
+        "lib/netstandard1.5/AutoFixture.NUnit3.pdb",
+        "lib/netstandard1.5/AutoFixture.NUnit3.xml",
+        "lib/netstandard2.0/AutoFixture.NUnit3.dll",
+        "lib/netstandard2.0/AutoFixture.NUnit3.pdb",
+        "lib/netstandard2.0/AutoFixture.NUnit3.xml"
+      ]
+    },
     "Castle.Core/4.4.0": {
       "sha512": "b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
       "type": "package",
@@ -1425,10 +1561,10 @@
         "readme.txt"
       ]
     },
-    "coverlet.collector/3.0.2": {
-      "sha512": "iBvPAIDaI7j/iMx/DzCGCJ3rdiOmel9VINEfaTiBv/NKIGHOP4X3hqc6Q1wgMtArEshlhXexQknP17SK4vXb1w==",
+    "coverlet.collector/3.1.0": {
+      "sha512": "YzYqSRrjoP5lULBhTDcTOjuM4IDPPi6PhFsl4w8EI4WdZhE6llt7E38Tg4CHyrS+QKwyu1+9OwkdDgluOdoBTw==",
       "type": "package",
-      "path": "coverlet.collector/3.0.2",
+      "path": "coverlet.collector/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1472,8 +1608,23 @@
         "build/netstandard1.0/coverlet.core.dll",
         "build/netstandard1.0/coverlet.core.pdb",
         "coverlet-icon.png",
-        "coverlet.collector.3.0.2.nupkg.sha512",
+        "coverlet.collector.3.1.0.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "Fare/2.1.1": {
+      "sha512": "HaI8puqA66YU7/9cK4Sgbs1taUTP1Ssa4QT2PIzqJ7GvAbN1QgkjbRsjH+FSbMh1MJdvS0CIwQNLtFT+KF6KpA==",
+      "type": "package",
+      "path": "fare/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fare.2.1.1.nupkg.sha512",
+        "fare.nuspec",
+        "lib/net35/Fare.dll",
+        "lib/net35/Fare.xml",
+        "lib/netstandard1.1/Fare.dll",
+        "lib/netstandard1.1/Fare.xml"
       ]
     },
     "Microsoft.CodeCoverage/16.9.4": {
@@ -2775,6 +2926,85 @@
         "ref/xamarinwatchos10/_._",
         "system.componentmodel.4.3.0.nupkg.sha512",
         "system.componentmodel.nuspec"
+      ]
+    },
+    "System.ComponentModel.Annotations/4.3.0": {
+      "sha512": "SY2RLItHt43rd8J9D8M8e8NM4m+9WLN2uUd9G0n1I4hj/7w+v3pzK6ZBjexlG1/2xvLKQsqir3UGVSyBTXMLWA==",
+      "type": "package",
+      "path": "system.componentmodel.annotations/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ComponentModel.Annotations.dll",
+        "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "lib/portable-net45+win8/_._",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/de/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/es/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/fr/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/it/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ja/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ko/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/portable-net45+win8/_._",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.annotations.4.3.0.nupkg.sha512",
+        "system.componentmodel.annotations.nuspec"
       ]
     },
     "System.ComponentModel.EventBasedAsync/4.3.0": {
@@ -5333,28 +5563,31 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "AutoFixture >= 4.17.0",
+      "AutoFixture.AutoMoq >= 4.17.0",
+      "AutoFixture.NUnit3 >= 4.17.0",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
       "NUnit >= 3.13.1",
       "NUnit3TestAdapter >= 3.17.0",
       "api >= 1.0.0",
-      "coverlet.collector >= 3.0.2",
+      "coverlet.collector >= 3.1.0",
       "moq >= 4.16.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shten\\.nuget\\packages\\": {}
+    "C:\\Users\\Tulen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\mockpres\\api.test\\api.test.csproj",
+      "projectUniqueName": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\api.test.csproj",
       "projectName": "api.test",
-      "projectPath": "G:\\mockpres\\api.test\\api.test.csproj",
-      "packagesPath": "C:\\Users\\shten\\.nuget\\packages\\",
-      "outputPath": "G:\\mockpres\\api.test\\obj\\",
+      "projectPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\api.test.csproj",
+      "packagesPath": "C:\\Users\\Tulen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\shten\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tulen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5368,8 +5601,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\mockpres\\api\\api.csproj": {
-              "projectPath": "G:\\mockpres\\api\\api.csproj"
+            "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\api.csproj": {
+              "projectPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\api.csproj"
             }
           }
         }
@@ -5384,6 +5617,18 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "AutoFixture": {
+            "target": "Package",
+            "version": "[4.17.0, )"
+          },
+          "AutoFixture.AutoMoq": {
+            "target": "Package",
+            "version": "[4.17.0, )"
+          },
+          "AutoFixture.NUnit3": {
+            "target": "Package",
+            "version": "[4.17.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.9.4, )"
@@ -5397,8 +5642,10 @@
             "version": "[3.17.0, )"
           },
           "coverlet.collector": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[3.0.2, )"
+            "version": "[3.1.0, )"
           },
           "moq": {
             "target": "Package",
@@ -5416,9 +5663,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

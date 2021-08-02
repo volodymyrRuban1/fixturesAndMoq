@@ -7,48 +7,39 @@ using NUnit.Framework;
 using api.Controllers;
 using System.Linq;
 using System.Collections.Generic;
+using AutoFixture;
+using AutoFixture.AutoMoq;
+using AutoFixture.NUnit3;
+
 
 namespace test
 {
+    public class AutoDomainDataAttribute : AutoDataAttribute
+    {
+        public AutoDomainDataAttribute()
+            : base(() => new Fixture().Customize(new AutoMoqCustomization()))
+        {
+
+        }
+    }
+
   public class Tests
   {
       private CartController controller;
-      private Mock<IPaymentService> paymentServiceMock;
-      private Mock<ICartService> cartServiceMock;
 
-      private Mock<IShipmentService> shipmentServiceMock;
-      private Mock<ICard> cardMock;
-      private Mock<IAddressInfo> addressInfoMock;
-      private List<CartItem> items;
-
-      [SetUp]
-      public void Setup()
+      [Theory]
+      [AutoDomainData]
+      public void ShouldReturnCharged(
+          [Frozen]Mock<IPaymentService> paymentServiceMock, [Frozen]Mock<ICartService> cartServiceMock,
+          [Frozen]Mock<IShipmentService> shipmentServiceMock, [Frozen] Mock<ICard> cardMock,
+          [Frozen]Mock<IAddressInfo> addressInfoMock, [Frozen]Mock<CartItem> cartItem, List<CartItem> items
+          )
       {
-          
-          cartServiceMock = new Mock<ICartService>();
-          paymentServiceMock = new Mock<IPaymentService>();
-          shipmentServiceMock = new Mock<IShipmentService>();
-
-          cardMock = new Mock<ICard>();
-          addressInfoMock = new Mock<IAddressInfo>();
-
-          var cartItemMock = new Mock<CartItem>();
-          cartItemMock.Setup(item => item.Price).Returns(10);
-
-          items = new List<CartItem>()
-          {
-              cartItemMock.Object
-          };
-
+          controller = new CartController(cartServiceMock.Object, paymentServiceMock.Object, shipmentServiceMock.Object);
+          paymentServiceMock.Setup(p => p.Charge(It.IsAny<double>(), cardMock.Object)).Returns(true);
+          cartItem.Setup(c => c.Price).Returns(1231);
           cartServiceMock.Setup(c => c.Items()).Returns(items.AsEnumerable());
 
-          controller = new CartController(cartServiceMock.Object, paymentServiceMock.Object, shipmentServiceMock.Object);
-      }
-
-      [Test]
-      public void ShouldReturnCharged()
-      {
-          paymentServiceMock.Setup(p => p.Charge(It.IsAny<double>(), cardMock.Object)).Returns(true);
 
           // act
           var result = controller.CheckOut(cardMock.Object, addressInfoMock.Object);
@@ -59,10 +50,16 @@ namespace test
           Assert.AreEqual("charged", result);
       }
 
-      [Test]
-      public void ShouldReturnNotCharged() 
+      [Theory]
+      [AutoDomainData]
+        public void ShouldReturnNotCharged(
+            [Frozen] Mock<IPaymentService> paymentServiceMock, Mock<ICartService> cartServiceMock,
+            [Frozen] Mock<IShipmentService> shipmentServiceMock, [Frozen] Mock<ICard> cardMock,
+            [Frozen] Mock<IAddressInfo> addressInfoMock, [Frozen] Mock<CartItem> cartItem, List<CartItem> items
+          ) 
       {
-          paymentServiceMock.Setup(p => p.Charge(It.IsAny<double>(), cardMock.Object)).Returns(false);
+          controller = new CartController(cartServiceMock.Object, paymentServiceMock.Object, shipmentServiceMock.Object);
+            paymentServiceMock.Setup(p => p.Charge(It.IsAny<double>(), cardMock.Object)).Returns(false);
 
           // act
           var result = controller.CheckOut(cardMock.Object, addressInfoMock.Object);

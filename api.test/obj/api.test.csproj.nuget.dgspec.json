@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\mockpres\\api.test\\api.test.csproj": {}
+    "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\api.test.csproj": {}
   },
   "projects": {
-    "G:\\mockpres\\api.test\\api.test.csproj": {
+    "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\api.test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\mockpres\\api.test\\api.test.csproj",
+        "projectUniqueName": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\api.test.csproj",
         "projectName": "api.test",
-        "projectPath": "G:\\mockpres\\api.test\\api.test.csproj",
-        "packagesPath": "C:\\Users\\shten\\.nuget\\packages\\",
-        "outputPath": "G:\\mockpres\\api.test\\obj\\",
+        "projectPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\api.test.csproj",
+        "packagesPath": "C:\\Users\\Tulen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api.test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shten\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tulen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\mockpres\\api\\api.csproj": {
-                "projectPath": "G:\\mockpres\\api\\api.csproj"
+              "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\api.csproj": {
+                "projectPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\api.csproj"
               }
             }
           }
@@ -44,6 +44,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoFixture": {
+              "target": "Package",
+              "version": "[4.17.0, )"
+            },
+            "AutoFixture.AutoMoq": {
+              "target": "Package",
+              "version": "[4.17.0, )"
+            },
+            "AutoFixture.NUnit3": {
+              "target": "Package",
+              "version": "[4.17.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.9.4, )"
@@ -57,8 +69,10 @@
               "version": "[3.17.0, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.2, )"
+              "version": "[3.1.0, )"
             },
             "moq": {
               "target": "Package",
@@ -76,9 +90,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -87,17 +98,17 @@
         }
       }
     },
-    "G:\\mockpres\\api\\api.csproj": {
+    "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\mockpres\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "G:\\mockpres\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\shten\\.nuget\\packages\\",
-        "outputPath": "G:\\mockpres\\api\\obj\\",
+        "projectPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\api.csproj",
+        "packagesPath": "C:\\Users\\Tulen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tulen\\Projects\\Internship\\Practicing\\archives\\aboba\\fixturesAndMoq\\mockpres\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shten\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tulen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
